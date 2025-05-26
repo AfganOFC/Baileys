@@ -570,8 +570,7 @@ afgan.sendMessage(jid, { forward: msg, force: true or number }) // WA forward th
 
 #### Location Message
 ```ts
-afgan.sendMessage(jid, 
-{
+afgan.sendMessage(jid, {
 location: {
 degreesLatitude: 24.121231,
 degreesLongitude: 55.1121221
@@ -582,8 +581,7 @@ degreesLongitude: 55.1121221
 
 #### Live Location Message
 ```ts
-afgan.sendMessage(jid, 
-{
+afgan.sendMessage(jid, {
 location: {
 degreesLatitude: 24.121231,
 degreesLongitude: 55.1121221
@@ -662,8 +660,7 @@ toAnnouncementGroup: false // or true
 
 #### Poll Result Message
 ```ts
-afgan.sendMessage(jid, 
-{
+afgan.sendMessage(jid, {
 pollResult: {
 name: 'Hi', 
 values: [
@@ -1213,8 +1210,7 @@ id: 'Id 2'
 );
 
 // If you want to use an image
-afgan.sendMessage(jid, 
-{
+afgan.sendMessage(jid, {
 image: { 
 url: 'https://example.jpg' 
 },
@@ -1236,8 +1232,7 @@ hasMediaAttachment: false // or true
 );
 
 // If you want to use an video
-afgan.sendMessage(jid, 
-{
+afgan.sendMessage(jid, {
 video: { 
 url: 'https://example.mp4' 
 },
@@ -1259,8 +1254,7 @@ hasMediaAttachment: false // or true
 );
 
 // If you want to use an document
-afgan.sendMessage(jid, 
-{
+afgan.sendMessage(jid, {
 document: { 
 url: 'https://example.jpg' 
 }, 
@@ -1284,8 +1278,7 @@ hasMediaAttachment: false // or true
 );
 
 // If you want to use an location
-afgan.sendMessage(jid, 
-{
+afgan.sendMessage(jid, {
 location: { 
 degressLatitude: -0,
 degressLongitude: 0,
@@ -1344,8 +1337,7 @@ hasMediaAttachment: false // or true
 
 ### Status Mentions Message
 ```ts
-afgan.sendStatusMentions(jid, 
-{
+afgan.sendStatusMentions(jid, {
 image: {
 url: 'https://example.com.jpg'
 }, 
@@ -1383,8 +1375,7 @@ delay: 2000
 ```
 ### Shop Message
 ```ts
-afgan.sendMessage(jid, 
-{
+afgan.sendMessage(jid, {
 text: 'Body',
 title: 'Title', 
 subtitle: 'Subtitle', 
@@ -1398,8 +1389,7 @@ viewOnce: true
 );
 
 // Image
-afgan.sendMessage(jid, 
-{ 
+afgan.sendMessage(jid, { 
 image: {
 url: 'https://example.jpg'
 },
@@ -1417,8 +1407,7 @@ viewOnce: true
 );
 
 // Video
-afgan.sendMessage(jid, 
-{ 
+afgan.sendMessage(jid, { 
 video: {
 url: 'https://example.jpg'
 },
@@ -1436,8 +1425,7 @@ viewOnce: true
 );
 
 // Document
-afgan.sendMessage(jid, 
-{
+afgan.sendMessage(jid, {
 document: { 
 url: 'https://example.jpg' 
 }, 
@@ -1457,8 +1445,7 @@ viewOnce: true
 );
 
 // Location
-afgan.sendMessage(jid, 
-{ 
+afgan.sendMessage(jid, { 
 location: {
  degressLatitude: -0, 
  degressLongitude: 0,
@@ -1508,8 +1495,7 @@ viewOnce: true
 ```
 ### Collection Message
 ```ts
-afgan.sendMessage(jid, 
-{
+afgan.sendMessage(jid, {
 text: 'Body',
 title: 'Title', 
 subtitle: 'Subtitle', 
@@ -1524,8 +1510,7 @@ viewOnce: true
 );
 
 // Image
-afgan.sendMessage(jid, 
-{ 
+afgan.sendMessage(jid, { 
 image: {
 url: 'https://example.jpg'
 },
@@ -1544,8 +1529,7 @@ viewOnce: true
 );
 
 // Video
-afgan.sendMessage(jid, 
-{ 
+afgan.sendMessage(jid, { 
 video: {
 url: 'https://example.jpg'
 },
@@ -1564,8 +1548,7 @@ viewOnce: true
 );
 
 // Document
-afgan.sendMessage(jid, 
-{
+afgan.sendMessage(jid, {
 document: { 
 url: 'https://example.jpg' 
 }, 
@@ -1586,8 +1569,7 @@ viewOnce: true
 );
 
 // Location
-afgan.sendMessage(jid, 
-{ 
+afgan.sendMessage(jid, { 
 location: {
  degressLatitude: -0, 
  degressLongitude: 0,
@@ -1666,8 +1648,7 @@ Sending media (video, stickers, images) is easier & more efficient than ever.
 #### Gif Message
 - Whatsapp doesn't support `.gif` files, that's why we send gifs as common `.mp4` video with `gifPlayback` flag
 ```ts
-afgan.sendMessage(jid, 
-{ 
+afgan.sendMessage(jid, { 
 video: fs.readFileSync('Media/ma_gif.mp4'),
 caption: 'hello word',
 gifPlayback: true
@@ -1714,8 +1695,7 @@ make_zero
 ffmpeg -i input.mp4 -avoid_negative_ts make_zero -ac 1 output.ogg
 ```
 ```ts
-afgan.sendMessage(jid, 
-{
+afgan.sendMessage(jid, {
 audio: {
 url: './Media/audio.mp3'
 },
@@ -1952,8 +1932,7 @@ afgan.sendMessage(jid,
 afgan.sendMessage(jid, { text: 'hello' }, { ephemeralExpiration: WA_DEFAULT_EPHEMERAL })
 
 // turn off disappearing messages
-afgan.sendMessage(jid, 
-{ disappearingMessagesInChat: false }
+afgan.sendMessage(jid, { disappearingMessagesInChat: false }
 )
 ```
 
@@ -1966,7 +1945,7 @@ afgan.clearMessage(jid, key, timestamps)
 
 ### Check If ID Exists in Whatsapp
 ```ts
-const [result] = afgan.onWhatsApp(jid)
+const result = afgan.onWhatsApp(jid)
 if (result.exists) console.log (`${jid} exists on WhatsApp, as jid: ${result.jid}`)
 ```
 
